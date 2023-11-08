@@ -8,18 +8,18 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 public class SpringSecurity {
-    @Bean
-    public SecurityFilterChain filteringCriteria(HttpSecurity http) throws Exception {
-        http.cors().disable();
-        http.csrf().disable();
-        http.authorizeHttpRequests(authorize -> {
-            authorize.anyRequest().permitAll();
-        });
+//    @Bean
+//    public SecurityFilterChain filteringCriteria(HttpSecurity http) throws Exception {
+//        http.cors().disable();
+//        http.csrf().disable();
 //        http.authorizeHttpRequests(authorize -> {
-//            authorize.requestMatchers("/auth/*").authenticated();//allow only authenticated user to access /auth/*
+//            authorize.anyRequest().permitAll();
 //        });
-        return http.build();
-    }
+////        http.authorizeHttpRequests(authorize -> {
+////            authorize.requestMatchers("/auth/*").authenticated();//allow only authenticated user to access /auth/*
+////        });
+//        return http.build();
+//    }
     //Security Filter Chain object handles what all api endpoints should be
     //authenticated vs what shouldn't be authenticated
     @Bean
