@@ -72,11 +72,13 @@ public class SecurityConfig {
             throws Exception {
         http
                 .authorizeHttpRequests((authorize) -> authorize
+                        .requestMatchers("/actuator/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 // Form login handles the redirect to the login page from the
                 // authorization server filter chain
                 .formLogin(Customizer.withDefaults());
+
 //        http
 //                .authorizeHttpRequests((authorize) -> authorize
 //                        .requestMatchers("/fakeproducts").authenticated()
